@@ -1,0 +1,10 @@
+
+# Site settings
+title: 'Memory Safety: Rust'
+email: ''
+baseurl: "" # the subpath of your site, e.g. /blog
+#url: "http://yourdomain.com" # the base hostname & protocol for your site
+github_username:  hmc-memsafe-2016f
+
+# Build settings
+markdown: kramdown

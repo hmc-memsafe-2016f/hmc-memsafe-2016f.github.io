@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <textarea id="source">
+{% include_relative content.md %}
+    </textarea>
+    <script src="{{ site.baseurl }}/js/remark.min.js"></script>
+    <script src="{{ site.baseurl }}/js/playpen.198.js"></script>
+    <link rel="stylesheet" href="{{ "/css/slides.css" | prepend: site.baseurl }}">
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true,
+      });
+      window.playgroundUrl = "https://play.rust-lang.org/";
+    </script>
+  </body>
+</html>
