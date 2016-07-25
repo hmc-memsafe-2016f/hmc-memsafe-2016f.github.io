@@ -1,6 +1,6 @@
 layout: true
 class: center middle
-highlightLines: true
+
 ---
 ## Rust: Through the Escape Hatch
 

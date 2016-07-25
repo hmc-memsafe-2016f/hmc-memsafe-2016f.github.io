@@ -1,9 +1,27 @@
-# Hi there!
+layout: true
+class: center middle
 
 ---
-# Heading
 
-New slide!
+## Memory Safety
+
+Alex Ozdemir
+
+30 August 2016
+
+---
+
+## In the Beginning
+
+.left-column.left[
+### Memory was just a row of bins:
+* `fn read(Address) -> Value;`
+* `fn write(Address,Value)`
+]
+.right-column[
+![Memory and CPU relationship][memory-cpu]
+]
+
 ---
 
 ## What are C and C++?
@@ -94,3 +112,9 @@ class Instance {
 
 ### Characteristics
 * Ownership semantics
+
+
+
+
+
+[memory-cpu]: http://www.hitequest.com/Kiss/comp_arch_general.gif
