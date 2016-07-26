@@ -1,3 +1,6 @@
+body {
+  max-height: 100vh;
+}
 /* run button on rust snippets */
 code.rust { position: relative; }
 a.test-arrow {
@@ -14,22 +17,61 @@ a.test-arrow {
 
 /* Two-column layout */
 .red {
-color: #A52B00;
+  color: #A52B00;
 }
 .blue {
-color: #01346B;
+  color: #01346B;
+}
+.white {
+  color: #FFFFFF;
+}
+.yellow {
+  color: #F49600;
+}
+.orange {
+  color: #F74C00;
 }
 .left-column {
-width: 40%;
-height: 92%;
-float: left;
-}/*
-.left-column h2:last-of-type, .left-column h3:last-child {
-  color: #000;
-}*/
+  width: 48%;
+  float: left;
+  max-height: 100%;
+}
 .right-column {
-width: 55%;
-float: right;
+  width: 48%;
+  float: right;
+  max-height: 100%;
+}
+
+.img-tiny img {
+  max-width: 200px;
+}
+.img-small img {
+  max-width: 300px;
+}
+.img-med img {
+  max-width: 400px;
+}
+.img-large img {
+  max-width: 500px;
+}
+
+.img-opaque img {
+  opacity: .5;
+}
+
+.big-idea {
+  font-size: 2em;
+  text-align: center;
+}
+
+.column-3 {
+  width: 31.333%;
+  padding: 1%;
+  float: left;
+}
+
+.footnote {
+  font-size: .7em;
 }
 
 /* Make code smaller */

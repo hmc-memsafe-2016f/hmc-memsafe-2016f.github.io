@@ -230,21 +230,7 @@ fn index(v: &[i32], i: usize) -> Option<i32> {
 }
 ```
 
----
-
-## Unsafe Example
-
-A good use of `unsafe`:
-
-```rust
-fn index(v: &[i32], i: usize) -> Option<i32> {
-    if i < v.len() {
-        unsafe { Some(v.get_unchecked(i)) }
-    } else {
-        None
-    }
-}
-```
+--
 
 A bad use of `unsafe`:
 
