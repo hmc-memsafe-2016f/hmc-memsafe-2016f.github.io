@@ -22,13 +22,22 @@ hours:
 
 Week |  Date  | Topic | Slides | Assignment | Due Date |
 -----|--------|-------|--------|------------|----------|
-     | 30 Aug | Why Take This Course? | [slides][slides0] |  -- | -- |
-0    | ?? |Getting Acquianted With Rust | ?? | [Warm Up][hw0] | ?? |
-1    | ?? | The Ownership System | ?? | [A Linked List][hw1] | ?? |
+     | 30 Aug | Why Take This Course?          | [slides][slides0] |  -- | -- |
+0    | ??     | Getting Acquianted With Rust   | ?? | [Warm Up][hw0] | ?? |
+1    | ??     | The Ownership System           | ?? | [A Linked List][hw1] | ?? |
+2    | ??     | Implications of Ownership      | ?? | [Expressions][hw2] | ?? |
+3    | ??     | Lifetime: Disambiguated        | ?? | [Type Analysis][hw3] | ?? |
+4    | ??     | Rc/Cell: Interior Mutatbility  | ?? | [Concurrency?][hw4] | ?? |
+5    | ??     | Unsafe                         | ?? | [Something Small][hw5] | ?? |
+6    | ??     | ??                             | ?? | Graphs! | ?? |
+7    | ??     | ??                             | ?? | Graphs! | ?? |
 
 
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
-[hw2]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[hw2]: /assignments/wk2/
+[hw3]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[hw4]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[hw5]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 [slides0]: /slides/00/
