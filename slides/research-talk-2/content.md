@@ -117,7 +117,7 @@ Prohibits a large and important class of bugs.
 ### Disadvantage
 
 Prohibits some complex,
-but sound programs.
+but safe programs.
 ]
 
 ---
