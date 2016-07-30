@@ -337,7 +337,7 @@ class:center, middle
 
 .left-column.small-code[
 ```rust
-fn sayHi() {
+fn say_hi() {
     println!("Hello!");
 }
 ```
@@ -360,7 +360,7 @@ fn index(v: &[i32], i: usize) -> Option<i32> {
 
 .left-column.small-code[
 ```rust
-fn sayHi() {
+fn say_hi() {
     println!("Hello!");
 }
 ```

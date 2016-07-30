@@ -68,10 +68,11 @@ template: l
 
 .left-column.orange[
 ## Problems
-* buffer overrun
-* uninitialized memory
-* use after free
-* ...
+* Not _memory safe_
+   * buffer overrun
+   * uninitialized memory
+   * use after free
+   * ...
 
 .img-tiny[
 ![Heartbleed][heartbleed]
@@ -86,20 +87,16 @@ template: l
 
 ## Rust
 
+.center[
 ![Trade Off][trade-off]
+]
 
 ---
 
 ## Rust
 
 .center[
-.img-opaque[
-![Trade Off][trade-off]
-]
-
-.img-large[
 ![No Trade Off][no-trade-off]
-]
 ]
 
 ---
@@ -183,13 +180,13 @@ requires them.
 ```rust
 fn main() {
     let x = 5;
-    let p = &5 as *const i32;
+    let p = &x as *const i32;
 
 
     unsafe {
 
         *p
-    }
+    };
 }
 ```
 ]
@@ -210,13 +207,13 @@ requires them.
 ```rust
 fn main() {
     let x = 5;
-    let p = &5 as *const i32;
+    let p = &x as *const i32;
 
 
     unsafe {
         // "p must be a valid pointer"
         *p
-    }
+    };
 }
 ```
 ]
@@ -237,13 +234,13 @@ requires them.
 ```rust
 fn main() {
     let x = 5;
-    let p = &5 as *const i32;
+    let p = &x as *const i32;
     //      ^^ This operation ensures p
     //         is a valid pointer!
     unsafe {
         // "p must be a valid pointer"
         *p
-    }
+    };
 }
 ```
 ]
@@ -253,8 +250,8 @@ fn main() {
 [bus]: http://farm5.staticflickr.com/4002/4551273440_b8253f2383_z.jpg
 [heartbleed]: https://upload.wikimedia.org/wikipedia/commons/d/dc/Heartbleed.svg
 [overruns]: /images/2016-07-26-buffer-overruns.png
-[trade-off]: https://docs.google.com/drawings/d/1DUug8LxqRalnfckaHwUTd8tyxWMxDn2Aubqr6v8-DyY/pub?w=894&h=134
-[no-trade-off]: https://i.imgur.com/nNSYO84.png
+[trade-off]: https://docs.google.com/drawings/d/1hDhy3MN6q4P2f755t4BkllHUXlAUXdc54XCgoBEiNdU/pub?w=713&h=431
+[no-trade-off]: https://docs.google.com/drawings/d/1nsZ0IU8gCc_J0sgWwjVvo_ZdzxrtlAj6vXFATeJjKMs/pub?w=713&h=431
 [graph]: https://cdn-images-1.medium.com/max/400/1*Q9n58avTamrRmY66Ne0Hug.png
 [blog]: https://alex-ozdemir.github.io/rust/unsafe/unsafe-in-rust-syntactic-patterns/
 [syntax]: https://docs.google.com/drawings/d/1LIeBdnuG-N0ilCzbl_Dl38Auku6xJb0CqNZQyzQ_NGc/pub?w=1210&h=367
