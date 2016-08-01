@@ -12,24 +12,15 @@ class: left top
 
 template: c
 
-## Rust: Speed & Safety
+## Rust: Down the Rabbit Hole
 
-.center[
-.column-3.center[
-![Bus][bus]
-Safe
-]
-.column-3.center[
-![Car][car]
-Fast
-]
-.column-3.center[
-![Plane][plane]
-Both
-]
+.img-large[
+![Through the Looking Glass][looking-glass]
 ]
 
 .white[-]
+
+#### Speed, Safety, and the Loophole that Makes Both Possible
 
 Alex Ozdemir
 
@@ -37,17 +28,32 @@ Alex Ozdemir
 
 template: l
 
-## Systems Programming
+## Low-Level Languages
 
 .left-column.blue[
 ### Characteristics
 * Low overhead
-   * Cycles
-   * Memory
+   * Very Fast
+   * Minimal Memory Use
 * Direct control over computer
-* Semantics mirror the hardware
+* Close to the hardware
+
 ]
 .right-column.red[
+### Problems
+* Not _memory safe_
+   * Easy to make mistakes that produce
+      * incorrect programs
+      * insecure programs
+
+.center.img-tiny[
+![Heartbleed][heartbleed]
+]
+.center[Heartbleed OpenSSL Vulnerability]
+]
+
+???
+
 ### Uses
 * Performance critical programs
    * Web infrastructure
@@ -58,30 +64,6 @@ template: l
 * Extremely robust code
    * Airplanes
    * Space
-]
-
----
-
-template: l
-
-## Systems Programming
-
-.left-column.orange[
-## Problems
-* Not _memory safe_
-   * buffer overrun
-   * uninitialized memory
-   * use after free
-   * ...
-
-.img-tiny[
-![Heartbleed][heartbleed]
-]
-]
-.right-column[
-![Buffer Overruns][overruns]
-.center[recorded buffer overrun vulnerabilities]
-]
 
 ---
 
@@ -193,6 +175,8 @@ fn main() {
 
 ---
 
+count: false
+
 ## Phase 2: Dataflow
 
 .left-column[
@@ -220,6 +204,8 @@ fn main() {
 
 ---
 
+count: false
+
 ## Phase 2: Dataflow
 
 .left-column[
@@ -245,6 +231,25 @@ fn main() {
 ```
 ]
 
+---
+
+## Summary
+
+Rust provides powerful guarantees, but includes a loophole, `unsafe`.
+
+.left-column[
+### Syntactic Analysis
+* How common is unsafe code?
+* What syntactic patterns does it fall into?
+]
+.right-column[
+### Semantic Analysis
+* Can we detect uses of the `unsafe` feature that are _definitely safe_ or
+    _definitely unsafe_?
+   * _Super_ cool!
+   * Work in Progress
+]
+
 [plane]: http://orig13.deviantart.net/d271/f/2012/203/6/f/airplane_by_paullus23-d58794k.jpg
 [car]: http://resources.carsguide.com.au/styles/cg_hero_large/s3/Mitsubishi-Mirage-sedan-(4).jpg
 [bus]: http://farm5.staticflickr.com/4002/4551273440_b8253f2383_z.jpg
@@ -255,3 +260,4 @@ fn main() {
 [graph]: https://cdn-images-1.medium.com/max/400/1*Q9n58avTamrRmY66Ne0Hug.png
 [blog]: https://alex-ozdemir.github.io/rust/unsafe/unsafe-in-rust-syntactic-patterns/
 [syntax]: https://docs.google.com/drawings/d/1LIeBdnuG-N0ilCzbl_Dl38Auku6xJb0CqNZQyzQ_NGc/pub?w=1210&h=367
+[looking-glass]: http://nerdreactor.com/wp-content/uploads/2016/02/alice-through-the-looking-glass-poster-1.jpg
