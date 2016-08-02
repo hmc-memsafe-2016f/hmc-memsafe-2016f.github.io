@@ -14,10 +14,6 @@ template: c
 
 ## Rust: Down the Rabbit Hole
 
-.img-large[
-![Through the Looking Glass][looking-glass]
-]
-
 .white[-]
 
 #### Speed, Safety, and the Loophole that Makes Both Possible
@@ -140,10 +136,22 @@ How should programmers write unsafe code?
 ---
 
 ## Phase 1: Syntactic Analysis
+
 .center[
 ![Flowchart for Syntax][syntax]
+]
+
+---
+
+## Phase 1: Syntactic Analysis
+
+.center[
+.img-large[
+![Unsafe in Rust][contexts]
+]
 
 .footnote[A careful discussion of results and methods can be found [here][blog].]
+
 ]
 
 ---
@@ -250,11 +258,9 @@ Rust provides powerful guarantees, but includes a loophole, `unsafe`.
    * Work in Progress
 ]
 
-[plane]: http://orig13.deviantart.net/d271/f/2012/203/6/f/airplane_by_paullus23-d58794k.jpg
-[car]: http://resources.carsguide.com.au/styles/cg_hero_large/s3/Mitsubishi-Mirage-sedan-(4).jpg
-[bus]: http://farm5.staticflickr.com/4002/4551273440_b8253f2383_z.jpg
 [heartbleed]: https://upload.wikimedia.org/wikipedia/commons/d/dc/Heartbleed.svg
 [overruns]: /images/2016-07-26-buffer-overruns.png
+[contexts]: /images/2016-08-02-unsafe-prevelence.png
 [trade-off]: https://docs.google.com/drawings/d/1hDhy3MN6q4P2f755t4BkllHUXlAUXdc54XCgoBEiNdU/pub?w=713&h=431
 [no-trade-off]: https://docs.google.com/drawings/d/1nsZ0IU8gCc_J0sgWwjVvo_ZdzxrtlAj6vXFATeJjKMs/pub?w=713&h=431
 [graph]: https://cdn-images-1.medium.com/max/400/1*Q9n58avTamrRmY66Ne0Hug.png
