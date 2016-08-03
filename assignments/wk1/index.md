@@ -41,4 +41,16 @@ idioms the functionality required by this assignment can be written very
 concisely - in fact the sample solution is less than 40 lines long, without the
 bonus functions.
 
+## Bonuses
+
+There are three bonuses:
+
+   1. Implement `reverse`, which reverses the order of the elements in the
+      stack.
+   1. Implement `remove_first`, which removes the first occurance of some
+      element from the stack.
+   1. Run the tests using `cargo test -- --ignored`. Note that
+      `tests::mystery::wat` fails. Figure out why and fix it! Useful tools
+      include `cargo test -- --ignored --no-capture` and `rust-gdb`.
+
 [wk1-github]: https://github.com/hmc-memsafe-2016f/wk1-starter
