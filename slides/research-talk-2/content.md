@@ -27,25 +27,23 @@ template: l
 ## Low-Level Languages
 
 .left-column.blue[
-### Characteristics
+### Benefits
 * Low overhead
-   * Very Fast
-   * Minimal Memory Use
-* Direct control over computer
-* Close to the hardware
+   * (Good Performance)
+   * Direct control over computer
 
 ]
 .right-column.red[
 ### Problems
 * Not _memory safe_
-   * Easy to make mistakes that produce
-      * incorrect programs
-      * insecure programs
+   * Potential for "memory errors"
+      * Buffer overflow, use-after-free, etc.
+   * Prominant source of bugs
+      * i.e. Heartbleed
 
 .center.img-tiny[
 ![Heartbleed][heartbleed]
 ]
-.center[Heartbleed OpenSSL Vulnerability]
 ]
 
 ???
@@ -156,7 +154,7 @@ How should programmers write unsafe code?
 
 ---
 
-## Phase 2: Dataflow
+## Phase 2: Data-Flow Analysis
 
 .left-column[
 * We model unsafe code as requiring _assumptions_ in order to safely execute.
@@ -185,7 +183,7 @@ fn main() {
 
 count: false
 
-## Phase 2: Dataflow
+## Phase 2: Data-Flow Analysis
 
 .left-column[
 * We model unsafe code as requiring _assumptions_ in order to safely execute.
@@ -214,7 +212,7 @@ fn main() {
 
 count: false
 
-## Phase 2: Dataflow
+## Phase 2: Data-Flow Analysis
 
 .left-column[
 * We model unsafe code as requiring _assumptions_ in order to safely execute.
@@ -251,13 +249,20 @@ Rust provides powerful guarantees, but includes a loophole, `unsafe`.
 * What syntactic patterns does it fall into?
 ]
 .right-column[
-### Semantic Analysis
+### Data-Flow Analysis
 * Can we detect uses of the `unsafe` feature that are _definitely safe_ or
     _definitely unsafe_?
    * _Super_ cool!
    * Work in Progress
 ]
 
+---
+
+template: c
+
+![Bye!][thats-all]
+
+[thats-all]: http://img09.deviantart.net/0248/i/2013/295/d/8/that_s_all_folks__by_surrimugge-d6rfav1.png
 [heartbleed]: https://upload.wikimedia.org/wikipedia/commons/d/dc/Heartbleed.svg
 [overruns]: /images/2016-07-26-buffer-overruns.png
 [contexts]: /images/2016-08-02-unsafe-prevelence.png
