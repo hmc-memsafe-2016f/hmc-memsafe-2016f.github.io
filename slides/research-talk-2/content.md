@@ -12,7 +12,7 @@ class: left top
 
 template: c
 
-## Rust: Down the Rabbit Hole
+## 'Unsafe' in Rust
 
 .white[-]
 
