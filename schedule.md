@@ -22,16 +22,24 @@ hours:
 
 Week |  Date  | Topic | Slides | Assignment | Due Date |
 -----|--------|-------|--------|------------|----------|
-     | 30 Aug | Why Take This Course?          | [slides][slides0] |  -- | -- |
+     | 30 Aug | Memory Management and Rust (What to expect from this course?) | [slides][slides0] |  -- | -- |
 0    | ??     | Getting Acquianted With Rust   | ?? | [Warm Up][hw0] | ?? |
 1    | ??     | The Ownership System           | ?? | [A Linked List][hw1] | ?? |
-2    | ??     | Implications of Ownership      | ?? | [Expressions][hw2] | ?? |
-3    | ??     | Lifetime: Disambiguated        | ?? | [Type Analysis][hw3] | ?? |
-4    | ??     | Rc/Cell: Interior Mutatbility  | ?? | [Concurrency?][hw4] | ?? |
-5    | ??     | Unsafe                         | ?? | [Something Small][hw5] | ?? |
+2    | ??     | Traits and Polymorphism        | ?? | [Expressions][hw2] | ?? |
+3    | ??     | Lifetimes: Disambiguated       | ?? | [A Baby Database][hw3] | ?? |
+4    | ??     | Rc/Cell: Beyond Lifetimes      | ?? | [Concurrency?][hw4] | ?? |
+5    | ??     | Unsafe: The Needs, Powers, and Responsibilities | ?? | [Something Small][hw5] | ?? |
 6    | ??     | ??                             | ?? | Graphs! | ?? |
 7    | ??     | ??                             | ?? | Graphs! | ?? |
 
+# Cool topics
+
+I have a few other topics that I think are especially interesting, but I'm not
+sure where they'll go yet.
+
+* Implications of Ownership: Data Races
+* Implications of Ownership: Aliasing
+* Lifetimes: Beyond Lexical Scopes
 
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/

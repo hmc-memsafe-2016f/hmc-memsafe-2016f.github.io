@@ -54,9 +54,8 @@ associative operations, and we'd like to take advantage of that.
 This bonus proceeds in the following steps:
 
    1. Implement a conversion from `Expr` to `RExpr` (reduced expression), in
-      which substraction and division are replaced with addition+negation and
-      multiplication+reciprocal. By doing so, you make all binary operations in
-      the tree associative.
+      which substraction is replaced with addition+negation. By doing so, you
+      expose more associativity to your optimizations.
    2. Implement evaluation and the statistic functions for `RExpr` (see
       `src/reduced_expr/rexpr.rs`).
    3. Implement tree rotations for `RExpr`. These rotations should perform the

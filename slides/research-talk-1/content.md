@@ -554,6 +554,53 @@ class: center, middle
 |  Not a macro  |4,496 |18,916 |13,061 |1,264 |0 |37,737 |
 |  All sources  |9,029 |48,993 |15,309 |10,162 |80 |83,573 |
 
+---
+
+## More examples
+
+```rust
+pub struct VGA {
+    vga_mem_start: *mut u8,
+    // ...
+}
+
+impl VGA {
+    pub fn new() -> VGA {
+        VGA {
+            vga_mem_start: 0xb8000 as *mut u8,
+            // ...
+        }
+    }
+    pub fn write_first(&self, byte: u8) {
+        unsafe {
+            *(self.vga_mem_start) = byte;
+        }
+    }
+}
+```
+
+---
+
+## More Examples
+
+```rust
+/// Dereferences the input `ptr`.
+/// NB: `ptr` must be valid for this function to be memory safe!
+unsafe fn deref_helper(ptr: *const i32) -> i32 {
+    *ptr2
+}
+fn identity(ptr: *const i32) -> *const i32 {
+    ptr
+}
+pub fn deref(ptr: *const i32) -> i32 {
+    unsafe {
+        let ptr2 = identity(ptr);
+        deref_helper(ptr2)
+    }
+}
+```
+
+
 [trade-off]: https://docs.google.com/drawings/d/1DUug8LxqRalnfckaHwUTd8tyxWMxDn2Aubqr6v8-DyY/pub?w=894&h=134
 [no-trade-off]: https://i.imgur.com/nNSYO84.png
 [uast]: https://docs.google.com/drawings/d/1hSw97-1_yJuFz4lLRCKhHcZz5BsQa-JTG2NtZwHoIgw/pub?w=731&h=284
