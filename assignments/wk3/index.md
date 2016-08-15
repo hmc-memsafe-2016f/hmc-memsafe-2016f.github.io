@@ -41,6 +41,16 @@ You'll
       implement them
    4. complete the implementations of `IntoIterator<...>` for the above types
 
+The big constraint imposed on you for this assignment is that **you may not
+elide any lifetimes**. This is sort of a pain, but it's a good way of making
+sure that you know what's going on. Regardless, most of the functions you'll be
+implementing wouldn't allow elision anyway, or the elision mechanism would get
+the lifetimes wrong.
+
+The nature of this assignment means that most of your time will be spent just
+getting the tests to compile, because they won't compile until the lifetime
+parameters you're using have the correct semantics.
+
 This week -- like the linked list week -- does not involve writing much code,
 but does involve thinking carefully about some fairly tricky concepts
 (lifetimes). You should anticipate little typing, and lots of pondering
