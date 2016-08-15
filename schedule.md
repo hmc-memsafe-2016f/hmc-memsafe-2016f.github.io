@@ -44,7 +44,7 @@ sure where they'll go yet.
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
 [hw2]: /assignments/wk2/
-[hw3]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[hw3]: /assignments/wk3/
 [hw4]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 [hw5]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
