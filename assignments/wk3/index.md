@@ -17,9 +17,9 @@ strategy: go through each record and test it based on the predicate. Real
 databases, of course, do fun things with indexing.
 
 This week's task is actually fairly simple and could be done using iterators
-from the standard library alone, but for the education experience we'll be doing
-things our own way (in a style that mirrors the way the standard library is
-implemented).
+from the standard library alone, but for the enhanced educational experience
+we'll be doing things our own way (in a style that mirrors the way that
+collections within the standard library are implemented).
 
 In particular, our design uses the following types:
 
@@ -35,17 +35,23 @@ You'll
 
    1. complete the definitions of the above types (by adding the necessary
       lifetime parameters)
-   2. complete the definitions of `filter_one` and `filter_two`, and implement
-      them
-   3. complete the definitions of various methods on the above types, and
+   2. complete the definitions of various methods on the above types, and
       implement them
+   3. complete the definitions of `filter_one` and `filter_two`, and implement
+      them
    4. complete the implementations of `IntoIterator<...>` for the above types
 
 The big constraint imposed on you for this assignment is that **you may not
-elide any lifetimes**. This is sort of a pain, but it's a good way of making
+elide any lifetimes**[^elision]. This is sort of a pain, but it's a good way of making
 sure that you know what's going on. Regardless, most of the functions you'll be
 implementing wouldn't allow elision anyway, or the elision mechanism would get
 the lifetimes wrong.
+
+[^elision]:
+    technically, the restriction is stronger that. You must not only forsake
+    *elided lifetimes*, but also *anonymous lifetimes* of any form. One possible
+    presentation topic for this week details the history of anonymous lifetimes
+    in Rust, and where elision fits into that.
 
 The nature of this assignment means that most of your time will be spent just
 getting the tests to compile, because they won't compile until the lifetime

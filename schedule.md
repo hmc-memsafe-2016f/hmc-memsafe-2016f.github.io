@@ -27,7 +27,7 @@ Week |  Date  | Topic | Slides | Assignment | Due Date |
 1    | ??     | The Ownership System           | ?? | [A Linked List][hw1] | ?? |
 2    | ??     | Traits and Polymorphism        | ?? | [Expressions][hw2] | ?? |
 3    | ??     | Lifetimes: Disambiguated       | ?? | [A Baby Database][hw3] | ?? |
-4    | ??     | Rc/Cell: Beyond Lifetimes      | ?? | [Concurrency?][hw4] | ?? |
+4    | ??     | Rc/Cell: Beyond Lifetimes      | ?? | [Git-rs][hw4] | ?? |
 5    | ??     | Unsafe: The Needs, Powers, and Responsibilities | ?? | [Something Small][hw5] | ?? |
 6    | ??     | ??                             | ?? | Graphs! | ?? |
 7    | ??     | ??                             | ?? | Graphs! | ?? |
@@ -45,7 +45,9 @@ sure where they'll go yet.
 [hw1]: /assignments/wk1/
 [hw2]: /assignments/wk2/
 [hw3]: /assignments/wk3/
-[hw4]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[hw4]: /assignments/wk4/
 [hw5]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+[troll]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 [slides0]: /slides/00/
