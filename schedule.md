@@ -50,4 +50,4 @@ sure where they'll go yet.
 
 [troll]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
-[slides0]: /slides/00/
+[slides0]: https://www.youtube.com/watch?v=dQw4w9WgXcQ

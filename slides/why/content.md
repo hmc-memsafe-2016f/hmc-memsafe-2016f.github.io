@@ -3,11 +3,19 @@ class: center middle
 
 ---
 
-## Memory Safety
+## Memory Safety and Rust
 
 Alex Ozdemir
 
 30 August 2016
+
+---
+
+class: center top
+
+## Control vs. Safety
+
+![The tradeoff][trade-off]
 
 ---
 
@@ -119,5 +127,5 @@ class Instance {
 
 
 
-
+[trade-off]: https://docs.google.com/drawings/d/1DUug8LxqRalnfckaHwUTd8tyxWMxDn2Aubqr6v8-DyY/pub?w=894&h=134
 [memory-cpu]: http://www.hitequest.com/Kiss/comp_arch_general.gif
