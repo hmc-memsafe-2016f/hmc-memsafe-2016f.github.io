@@ -22,7 +22,7 @@ hours:
 
 Week |  Date  | Topic | Slides | Assignment | Due Date |
 -----|--------|-------|--------|------------|----------|
-     | 31 Aug | Memory Management and Rust (What to expect from this course?) | [slides][slides0] |  -- | -- |
+     | 09/07  | Memory Management and Rust (What to expect from this course?) | [slides][slides0] |  -- | -- |
 0    |     ?? | Getting Acquianted With Rust   | ?? | [Warm Up][hw0] | ?? |
 1    | 10/25  | The Ownership System           | ?? | [A Linked List][hw1] | ?? |
 2    | 11/1   | Ownership: Ramifications       | ?? | [Expressions][hw2] | ?? |
