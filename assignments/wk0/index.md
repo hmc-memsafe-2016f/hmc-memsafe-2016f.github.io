@@ -56,4 +56,54 @@ in some way! Possibilities include:
    * Improve the way a board is displayed
    * Modify the original Towers of Hanoi game
 
+## Example Behavior
+
+This assignment will not be auto-graded, so there is no need to satisfy any
+specific interface. However, an example of one game is below:
+
+```
+  Left: 3 2 1
+Center: 
+ Right: 
+$ lc 
+  Left: 3 2
+Center: 1
+ Right: 
+$ lc
+Error: A disk of size 2 can't go on peg Center: there's already a smaller disk
+  Left: 3 2
+Center: 1
+ Right: 
+$ lr
+  Left: 3
+Center: 1
+ Right: 2
+$ cr
+  Left: 3
+Center: 
+ Right: 2 1
+$ l
+Error: Unknown Command
+  Left: 3
+Center: 
+ Right: 2 1
+$ lc
+  Left: 
+Center: 3
+ Right: 2 1
+$ rl
+  Left: 1
+Center: 3
+ Right: 2
+$ rc
+  Left: 1
+Center: 3 2
+ Right: 
+$ lc
+  Left: 
+Center: 3 2 1
+ Right: 
+You Won!
+```
+
 [starter]: https://github.com/hmc-memsafe-2016f/wk0-starter
