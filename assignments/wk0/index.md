@@ -47,7 +47,7 @@ Places where there is implementation to be done are denoted with the
 during execution. As you work you can build the project with `cargo build` and
 run the application using `cargo run [number of disks]`.
 
-## Not-Bonus (actually required)
+## Bonus
 
 The bonus for this assignment is fairly open-ended: just extend the application
 in some way! Possibilities include:
@@ -55,9 +55,5 @@ in some way! Possibilities include:
    * Add an AI
    * Improve the way a board is displayed
    * Modify the original Towers of Hanoi game
-
-The reason this is labeled as not-bonus is that at least _some_ modification is
-required! Any of the above would be sufficient, as would any other change of
-similar magnitude.
 
 [starter]: https://github.com/hmc-memsafe-2016f/wk0-starter
