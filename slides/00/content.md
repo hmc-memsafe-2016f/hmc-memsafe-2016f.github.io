@@ -398,7 +398,7 @@ Of course, `match` constructs are also expressions
 ```rust
 fn main() {
    let integer = Some(5);
-   let half = match o {
+   let half = match integer {
       Some(i) => Some(i / 2),
       None => None,
    };
@@ -416,7 +416,7 @@ fn map<U, F>(self, op: F) -> Result<U, E> where F: FnOnce(T) -> U
 ```rust
 fn main() {
    let integer = Some(5);
-   let half = o.map(|i| i / 2);
+   let half = integer.map(|i| i / 2);
 }
 ```
 
@@ -502,8 +502,10 @@ One can understand try like this:
 Pseudo explansion rules:
 ```
      try!(Ok(stuff)) => stuff,
-     try!(Err(err))  => Err(err),
+     try!(Err(err))  => return Err(err),
 ```
+
+--
 
 Macro definition:
 ```rust
