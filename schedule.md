@@ -20,20 +20,22 @@ hours:
 
 # Schedule
 
-Week |  Date  | Topic | Slides | Assignment | Due Date |
------|--------|-------|--------|------------|----------|
-     | 09/07  | Memory Management and Rust (What to expect from this course?) | [slides][slides0] |  -- | -- |
-0    |     ?? | Getting Acquianted With Rust   | ?? | [Warm Up][hw0] | ?? |
-1    | 10/25  | The Ownership System           | ?? | [A Linked List][hw1] | ?? |
-2    | 11/1   | Ownership: Ramifications       | ?? | [Expressions][hw2] | ?? |
-3    | 11/8   | Lifetimes: Disambiguated       | ?? | [A Baby Database][hw3] | ?? |
-4    | 11/15  | Rc/Cell: Beyond Lifetimes      | ?? | [Git-rs][hw4] | ?? |
-5    | 11/22  | Unsafe: The Needs, Powers, and Responsibilities | ?? | [Something Small][hw5] | ?? |
-6    | 11/29  | Project Kickoff / NLL          | ?? | Graphs! | ?? |
-7    | 12/6   |                                | ?? | Graphs! | ?? |
+Week |  Date  | Topic                          | Slides       | Assignment             | Due Date |
+-----|--------|--------------------------------|--------------|------------------------|----------|
+     | 09/07  | Memory Management and Rust     | [slides][sz] | --                     | --       |
+0    | 10/17  | Getting Acquianted With Rust   | [slides][s0] | [Warm Up][hw0]         | 10/25    |
+1    | 10/25  | The Ownership System           | ??           | [A Linked List][hw1]   | 11/1     |
+2    | 11/1   | Ownership: Ramifications       | ??           | [Expressions][hw2]     | ??       |
+3    | 11/8   | Lifetimes: Disambiguated       | ??           | [A Baby Database][hw3] | ??       |
+4    | 11/15  | Rc/Cell: Beyond Lifetimes      | ??           | [Git-rs][hw4]          | ??       |
+5    | 11/22  | Unsafe:                        | ??           | [Something Small][hw5] | ??       |
+6    | 11/29  | Project Kickoff / NLL          | ??           | Graphs!                | ??       |
+7    | 12/6   |                                | ??           | Graphs!                | ??       |
 
 # Cool topics
 
+[sz]: http://slides.com/alexozdemir/memory-safety-and-rust
+[s0]: /slides/00/
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
 [hw2]: /assignments/wk2/
@@ -43,4 +45,3 @@ Week |  Date  | Topic | Slides | Assignment | Due Date |
 
 [troll]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
-[slides0]: http://slides.com/alexozdemir/memory-safety-and-rust
