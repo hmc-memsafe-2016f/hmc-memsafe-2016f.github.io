@@ -5,9 +5,9 @@ class: center middle
 
 ## Memory Safety
 
-Alex Ozdemir
+### Welcome to Rust!
 
-17 October 2016
+19 October 2016
 
 ---
 
@@ -450,7 +450,7 @@ fn main() {
 
 ---
 
-## Optional Exercise
+## Option<Exercise>
 
 Build functions `divide` and `multiply` for `Option<i64>` so that divide by zero
 errors produce `None` values rather than runtime errors.
