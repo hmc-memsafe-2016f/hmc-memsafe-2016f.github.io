@@ -27,11 +27,12 @@ Course Components:
    * Done once, with a partner (Signups Soon!)
 * Final Projects
    * Graph APIs, Implementations, and Algorithms?
-   * I'm welcome to other ideas too
+   * I'm open to other ideas too
 
 ---
 
-layout: center
+layout: false
+class: center, middle
 
 ## On our goals
 
