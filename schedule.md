@@ -15,9 +15,9 @@ One class begins we will meet during Programming Practicum's typical timeslot:
 4:15 - 5:30, Tuesdays, in Shanahan 3460. There will also be frequent office/lab
 hours:
 
-   * 7:00 - 8:00 pm Wednesday, Shanahan B445
-   * TDB (Piazza Poll)
-   * TDB (Piazza Poll)
+   * 7:00 - 8:00 pm Monday, Shanahan B470
+   * 7:00 - 8:00 pm Wednesday, Shanahan B470
+   * 10:00 - 11:00 am Friday, Shanahan B454
 
 # Schedule
 
