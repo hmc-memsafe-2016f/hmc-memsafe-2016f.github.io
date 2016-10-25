@@ -25,7 +25,7 @@ Week |  Date  | Topic                          | Slides       | Assignment      
 -----|--------|--------------------------------|--------------|------------------------|----------|
      | 09/07  | Memory Management and Rust     | [slides][sz] | --                     | --       |
 0    | 10/17  | Getting Acquianted With Rust   | [slides][s0] | [Warm Up][hw0]         | 10/25    |
-1    | 10/25  | The Ownership System           | ??           | [A Linked List][hw1]   | 11/1     |
+1    | 10/25  | The Ownership System           | [slides][s1] | [A Linked List][hw1]   | 11/1     |
 2    | 11/1   | Ownership: Ramifications       | ??           | [Expressions][hw2]     | ??       |
 3    | 11/8   | Lifetimes: Disambiguated       | ??           | [A Baby Database][hw3] | ??       |
 4    | 11/15  | Rc/Cell: Beyond Lifetimes      | ??           | [Git-rs][hw4]          | ??       |
@@ -37,6 +37,7 @@ Week |  Date  | Topic                          | Slides       | Assignment      
 
 [sz]: http://slides.com/alexozdemir/memory-safety-and-rust
 [s0]: /slides/00/
+[s1]: /slides/01/
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
 [hw2]: /assignments/wk2/

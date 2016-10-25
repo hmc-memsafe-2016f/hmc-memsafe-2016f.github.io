@@ -41,9 +41,21 @@ idioms the functionality required by this assignment can be written very
 concisely - in fact the sample solution is less than 40 lines long, without the
 bonus functions.
 
+## Tips
+
+Important things to think about:
+
+   * How would one implement a singly linked list in C++? In particular, what
+     members would your struct's have?
+      * Nodes likely have pointers to nodes elsewhere on the heap. How does one
+        represent a heap-pointer in Rust?
+   * What are the ownership semantics of a singly linked list? The list must
+     (transitively) own the whole list. Node may "own" other nodes...
+
 ## Bonuses
 
-There are three bonuses:
+There are three bonuses. I'd recommend them strongly -- the first two are good
+practice and the last is really neat.
 
    1. Implement `reverse`, which reverses the order of the elements in the
       stack.
