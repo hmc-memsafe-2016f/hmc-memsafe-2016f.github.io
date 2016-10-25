@@ -21,6 +21,7 @@ Course Components:
 * Assignments
    * 6 in total
    * Group work and pair programming are both okay.
+   * Post-Assignment Questionnaires (required)
 * Presentations
    * Presenting a problem/solution, an intriguing feature of Rust
    * Connected [perhaps loosely] to the current assignment
@@ -37,8 +38,8 @@ Grading:
 
    * Full marks for:
        * Completing all assignments, your presentation, your project, and doing
-         a bonus or two OR
-       * Putting in the 8 - 1.5 hours expected by Programming Practicum
+         a bonus for 2 weeks OR
+       * Putting in the 8 (- 1.5) hours expected by Programming Practicum
 
 Collaboration:
 
@@ -55,17 +56,32 @@ Communication:
 
 ---
 
+class: center, middle
+
+![The Real Question](the-real-question2.png)
+
+---
+
 class: center middle
 
 # Ownership
 
+`T`, `&T`, and `&mut T`
+
 ---
+
+class: center middle
 
 ## The Problem
 
-   * Memory Management
+### Memory Management
 
-## Solutions
+Sometimes you want to store information. When you don't need that information
+anymore, you want to stop storing it.
+
+---
+
+## Memory Mangement Solutions
 
    1. Garbage Collection
       * Reference Counting
@@ -73,7 +89,7 @@ class: center middle
       * Tracing
          * JVM, Ruby, Javascript, ...
    2. Manual Memory Management
-      * C, C++, Pascal, FORTRAN
+      * **C**, **C++**, Pascal, FORTRAN
 
 Ownership is heavily inspired by manual memory management.
 
@@ -173,11 +189,11 @@ Rust enforces that all values have an owner.
 
 ```rust
 fn main() {
-    let x = Box::new(x);
+    let x = Box::new(5);
     // `x` owns a boxed integer
 
     println!("{}", *x);
-}
+} // `x` goes out of scope here, memory will be freed
 ```
 
 ---
@@ -194,7 +210,8 @@ fn main() {
     // `x` does not
 
     println!("{}", *y);
-}
+} // `y` goes out of scope, memory is freed
+  // `x` goes out of scope, nothing happens
 ```
 
 --
@@ -262,10 +279,14 @@ fn main() {
     // `y` is a reference to the box
     // `x` owns the box
 
-    println!("{}", *y);
-    println!("{}", *x);
-}
+    println!("{}", **y);
+    println!("{}",  *x);
+} // `y` goes out of scope, nothing happens(*)
 ```
+
+--
+
+We call this "borrowing" `x`.
 
 ---
 
@@ -305,12 +326,10 @@ fn main() {
         rx = &x;
     }
     println!("{}", *rx);
+    // ^ Error: "`x` does not live long enough"
 }
 ```
 
---
-
-Error: "`x` does not live long enough"
 
 ---
 
@@ -361,6 +380,24 @@ fn main() {
 
 ---
 
+## 3: Aliasing and Mutation
+
+Borrows last until the the borrowing variable is out-of-scope:
+
+```rust
+fn main() {
+    let mut x = 5;
+
+    {
+        let rx = &x;
+    } // `rx` goes out of scope, `x` is mutable again
+
+    let x += 1;
+}
+```
+
+---
+
 ### Ownership and Borrowing Rules: Recap
 
 In a paragraph, the reference rules:
@@ -378,14 +415,14 @@ In a paragraph, the reference rules:
 
 ### Ownership and Borrowing Rules: Recap
 
-We wanted to address the following problematic behavior:
+Were we able to adress the earlier problematic behaviors?
 
    1. Memory being leaked
-      * -> All data has an owner
+      * All data has an owner
    2. References outliving referents
-      * -> Referents must outlive referents
+      * Referents must outlive referents
    3. Simultaneous aliasing and mutation
-      * -> Outstanding references block mutation
+      * Outstanding references block mutation
 
 ---
 
@@ -527,10 +564,30 @@ This week you'll be building a singly linked list.
 Important things to think about:
    * How would one implement a singly linked list in C++? In particular, what
      members would your struct's have?
-      * Node likely have pointer to nodes elsewhere on the heap. How does one
+      * Nodes likely have pointers to nodes elsewhere on the heap. How does one
         represent a heap-pointer in Rust?
    * What are the ownership semantics of a singly linked list? The list must
      (transitively) own the whole list. Node may "own" other nodes...
+
+---
+
+## Loose Ends...
+
+> First, any borrow must last for **a scope no greater** than that of the owner.
+> Second, you may have one or the other of these two kinds of borrows, but not
+> both **at the same time**:
+>
+>    * one or more references (&T) to a resource,
+>    * exactly one mutable reference (&mut T).
+
+-- _The Rust Book_
+
+
+   * What is the "scope" of a borrow?
+   * What is the "scope" of data?
+   * What does it mean for borrow to exist "at the same time"?
+
+We'll talk about these questions in future lectures.
 
 ---
 
