@@ -97,14 +97,14 @@ Ownership is heavily inspired by manual memory management.
 
 ### Manual Memory Management Woes
 
-Use after free:
+Memory Leak:
 
 ```cpp
 int silly_sum(vector<int>& v) {
    int * sum = new 0;
    for (int i : v)
       *sum += i
-   return i;
+   return *sum;
 
    // Oops! `*sum` is leaked!
 }
@@ -335,7 +335,7 @@ fn main() {
 
 ## 3: Aliasing and Mutation
 
-You can create mutable alias (aliases that allow you to mutate the underlying
+You can create a mutable alias (aliases that allow you to mutate the underlying
 data):
 
 ```rust
@@ -456,7 +456,7 @@ is how you make references.
 ```rust
 fn as_ref<T>(o: &Option<T>) -> Option<&T> {
     match o {
-        &Some(ref inner) => Option(inner),
+        &Some(ref inner) => Some(inner),
         &None => None,
     }
 }
@@ -507,9 +507,9 @@ struct Pair(i32, i32);
 impl Ord for Pair {
     fn cmp(&self, other: &Self) -> Ordering {
         match self.0.cmp(other.0) {
-            Ordering::Less => Ordering::Less,
-            Ordering::Less => self.1.cmp(other.1),
-            Ordering::Less => Ordering::Greater,
+            Ordering::Less    => Ordering::Less,
+            Ordering::Equal   => self.1.cmp(other.1),
+            Ordering::Greater => Ordering::Greater,
         }
     }
 }
