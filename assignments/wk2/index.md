@@ -13,7 +13,7 @@ structure.
 
 The starter code can be found [here][wk2-github]. It includes the 'parser' from
 [nom's documentation][nom] which 'parses' an arithmetic expression into a
-value (quite cleverly).
+value (quite cleverly). 
 
 The project is organized as follows:
 
@@ -24,8 +24,7 @@ src/
     mod.rs       - The entry to the expr module: re-exports Expr and its parser
     expr.rs      - The Expr definition
     parser.rs    - The Expr parser
-  reduced_expr/  - See the bonus
-    rexpr.rs
+  rexpr.rs       - See the bonus
 ```
 
 Your job this week it to:
@@ -38,6 +37,14 @@ Your job this week it to:
       `operation_count`.
    1. Write a new binary, named `stat`, which prints the value, depth, and
       operation count of an expression (separated by spaces).
+   1. Fill out the [post-assignment questionnaire][qq]!
+
+This assignment should be tested as follows:
+
+```
+diff <(cargo run --bin repl < examples/test.in) examples/test.repl.out
+diff <(cargo run --bin stat < examples/test.in) examples/test.stat.out
+```
 
 ## Bonus A: Optimizing Arithmetic Expressions.
 
@@ -57,7 +64,9 @@ This bonus proceeds in the following steps:
       which substraction is replaced with addition+negation. By doing so, you
       expose more associativity to your optimizations.
    2. Implement evaluation and the statistic functions for `RExpr` (see
-      `src/reduced_expr/rexpr.rs`).
+      `src/reduced_expr/rexpr.rs`). Make corresponding binary `rstat`, which
+      implements the same interface as `stat`. Test this against
+      `examples/test.rstat.out`.
    3. Implement tree rotations for `RExpr`. These rotations should perform the
       rotation if it is structurally possible and would not change the value of
       the expression, and return whether or not the rotation was done. In
@@ -67,7 +76,7 @@ This bonus proceeds in the following steps:
       `RExpr`.  You may also take advantage of other properties of
       addition/multiplication (I.E. commutativity) if you want, but be sure to
       document this.
-      * This part is entirely open-ended - have fun!
+      * This part is entirely open-ended -- have fun!
 
 Use your optimization to write a binary named `reduce` which parses input
 arithmetic expressions as `Expr`'s, prints their depth, converts them to
