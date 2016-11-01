@@ -104,5 +104,6 @@ While this approach is useful in some cases (`nom` uses techniques like this
 under the hood), it's pretty silly here because integer literals are actually
 smaller than slices :laughing:.
 
+[qq]: https://docs.google.com/forms/d/e/1FAIpQLScCi0u3luk45jpzwIi5aMOM750SJ7u5LOkt02-09Ol95tb5rQ/viewform
 [wk2-github]: https://github.com/hmc-memsafe-2016f/wk2-starter
 [nom]: http://rust.unhandledexpression.com/nom/

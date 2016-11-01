@@ -50,6 +50,7 @@ It can be found [here][prez]
    7. Writing (and explaining) a safe Rust program which leaks memory
    8. Type System Abuse: Compile Time Arithmetic in Rust
    9. `Sized`: Sized and unsized types in Rust. (Also super cool)
+   10. Dereference coercions.
 
 #### Replace With
 

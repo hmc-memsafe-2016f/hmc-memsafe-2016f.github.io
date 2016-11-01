@@ -14,6 +14,26 @@ class: center middle
 layout: false
 class: left
 
+## Administrivia
+
+   * Grading
+      * To get full marks
+         * Do all assignments, your presentation, and the final project
+         * Also do 2 bonuses (possibly in the same week)
+      * OR put in the requisite (8 - 1.5) hours
+   * Late policy
+      * Everyone gets a euro -- good for getting 1 assignment in up to 1 day
+        late without penalty.
+      * Otherwise, late assignments receive a penalty commensurate with 1 bonus
+        each day.
+      * If you're in a sticky situation, talk to me -- I'm happy to grant an
+        extension
+
+---
+
+layout: false
+class: left
+
 ## Outline of today
 
    1. Assignment Debrief
@@ -23,6 +43,8 @@ class: left
       * `box` syntax
       * Tree representation
       * Rotations exercise
+      * Application of `box` syntax:
+         * Boxes and partial moves.
    3. Assignment Brief
       * Project Structure
       * Macros
