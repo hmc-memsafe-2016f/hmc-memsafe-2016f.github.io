@@ -50,7 +50,9 @@ It can be found [here][prez]
    7. Writing (and explaining) a safe Rust program which leaks memory
    8. Type System Abuse: Compile Time Arithmetic in Rust
    9. `Sized`: Sized and unsized types in Rust. (Also super cool)
-   10. Dereference coercions.
+   10. Dereference coercions & partial moves
+      * Why sometimes `p.x` and `p.y` can be independently moved and other times
+        they can't.
 
 #### Replace With
 
