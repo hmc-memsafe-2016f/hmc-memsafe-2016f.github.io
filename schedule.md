@@ -16,8 +16,8 @@ One class begins we will meet during Programming Practicum's typical timeslot:
 hours:
 
    * 7:00 - 8:00 pm Monday, Shanahan B470
-   * 7:00 - 8:00 pm Wednesday, Shanahan B470
-   * 10:00 - 11:00 am Friday, Shanahan B454
+   * 3:00 - 4:00 pm Sunday, by the Cafe
+   * 11:00 - 12:00 am Friday, Shanahan B454
 
 # Schedule
 
