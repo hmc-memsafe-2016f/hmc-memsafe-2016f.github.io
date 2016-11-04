@@ -108,6 +108,8 @@ While this approach is useful in some cases (`nom` uses techniques like this
 under the hood), it's pretty silly here because integer literals are actually
 smaller than slices :laughing:.
 
+This bonus uses things we haven't discussed yet, so I don't really recommend it.
+
 ## Bonus D: Blast From the Past
 
 Last week a handfull of people implemented `remove_first` using `pop` to expose
