@@ -86,6 +86,7 @@ It can be found [here][prez]
 [s0]: /slides/00/
 [s1]: /slides/01/
 [s2]: /slides/02/
+[s3]: /slides/03/
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
 [hw2]: /assignments/wk2/
