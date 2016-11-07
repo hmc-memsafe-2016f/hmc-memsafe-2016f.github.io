@@ -173,7 +173,7 @@ How should we represent a binary tree?
 How about this?
 
 ```rust
-enum Tree<T> {
+struct Tree<T> {
    data: T,
    left: Option<Tree<T>>,
    right: Option<Tree<T>>,
@@ -201,7 +201,7 @@ Once upon a time the error was not as nice:
 A better representation:
 
 ```rust
-enum Tree<T> {
+struct Tree<T> {
    data: T,
    left: Option<Box<Tree<T>>>,
    right: Option<Box<Tree<T>>>,
@@ -391,7 +391,7 @@ class: center, middle
 We've been using a number of simple (but useful macros).
 
 ```rust
-try!(/* expre */);
+try!(/* expr */);
 println!("{:?}", x);
 unimplemented!();
 unreachable!();
