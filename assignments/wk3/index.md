@@ -126,22 +126,22 @@ include snippets of the code with scopes labelled.
       just fine. What do you think the `for<'c>` means? Feel free to take a
       guess or read [this][hrtb] and then answer.
 
-## Bonus B: Explicit Lifetimes
+## Bonus C: Parsing Round II
 
-For this bonus you'll take on an extra constraint: you must be specific about
-all lifetimes in trait
+This bonus is a repeat of Bonus C from last week:
 
-**you may not elide any
-lifetimes**[^elision]. This is sort of a pain, but it's a good way of making
-sure that you know what's going on. While eliminating some of the elision may be
-easy, handling lifetimes in trait bounds (what lifetime goes in `Fn(&'a)`?) is
-particularly difficult.
+The goal for this bonus is to implment yet a _third_ version of `Expr`, lets
+call it `SliceExpr`, which instead of storing the integer value of literals in
+the expression will store the slices into the input - the slices where those
+literals are found. You should also implement `evaluate` for this new data
+structure as well.
 
-[^elision]:
-    technically, the restriction is stronger that. You must not only forsake
-    *elided lifetimes*, but also *anonymous lifetimes* of any form. One possible
-    presentation topic for this week details the history of anonymous lifetimes
-    in Rust, and where elision fits into that.
+While this approach is useful in some cases (`nom` uses techniques like this
+under the hood), it's pretty silly here because integer literals are actually
+smaller than slices :laughing:.
+
+It is, however, a great demonstration of your knowledge of lifetimes!
+
 
 [wk3-github]: https://github.com/hmc-memsafe-2016f/wk3-starter
 [vec-iter]: https://doc.rust-lang.org/src/collections/up/src/libcollections/vec.rs.html#1468
