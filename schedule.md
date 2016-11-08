@@ -27,7 +27,7 @@ Week |  Date  | Topic                          | Slides       | Assignment      
 0    | 10/17  | Getting Acquianted With Rust   | [slides][s0] | [Warm Up][hw0]         | 10/25    |
 1    | 10/25  | The Ownership System           | [slides][s1] | [A Linked List][hw1]   | 11/1     |
 2    | 11/1   | Ownership: Ramifications       | [slides][s2] | [Expressions][hw2]     | 11/8     |
-3    | 11/8   | Lifetimes: Disambiguated       | ??           | [A Baby Database][hw3] | ??       |
+3    | 11/8   | Lifetimes: Disambiguated       | [slides][s3] | [A Baby Database][hw3] | ??       |
 4    | 11/15  | Rc/Cell: Beyond Lifetimes      | ??           | [Git-rs][hw4]          | ??       |
 5    | 11/22  | Unsafe:                        | ??           | [Something Small][hw5] | ??       |
 6    | 11/29  | Project Kickoff / NLL          | ??           | Graphs!                | ??       |
@@ -52,7 +52,7 @@ It can be found [here][prez]
    9. `Sized`: Sized and unsized types in Rust. (Also super cool)
    10. Dereference coercions & partial moves
       * Why sometimes `p.x` and `p.y` can be independently moved and other times
-        they can't.
+        they can't. --Ross and Luis
 
 #### Replace With
 

@@ -273,115 +273,13 @@ class: middle center
 
 ---
 
-class: middle center
-
-_Disclaimer: The following section contains Rust syntax that is **not real**,
-but is used to help us get used to reference lifetimes._
-
----
-
-## The Outlives Relation (Take 1)
+## The Outlives Relation
 
 Recall the second rule of the ownership system:
 
 > No reference may outlive its referent.
 
-Can we express this using lifetimes?
-
---
-
-Idea 1: If `x = &y`, then the lifetime of `y` must contain the lifetime of `x`.
-
----
-
-## Idea 1: Case 1
-
-Idea 1: If `x = &y`, then the lifetime of `y` must contain the lifetime of `x`.
-
-```rust
-{                 // Scope 'a
-   let x = 5;
-   let rx = &x;
-}
-```
-
---
-
-`x`'s lifetime is `'a`.
-
-`rx`'s lifetime is also `'a`.
-
-So far so good!
-
----
-
-## Idea 1: Case 2
-
-Idea 1: If `x = &y`, then the lifetime of `y` must contain the lifetime of `x`.
-
-```rust
-fn main() {       // Scope 'a
-   let r: &i32;
-   {              // Scope 'b
-      let n = 5;
-      r = &n;
-   }
-}
-```
-
-What are the lifetimes of `r` and `n`?
-
---
-
-`r` has lifetime `'a`, but `n` has lifetime `'b`. This is a problem because
-`'b` does not contain `'a`.
-
-So far so good.
-
----
-
-To this end we'll extend the type `&T` into `&'lifetime T`
-
-```rust
-{   // Lifetime 'a
-   let x = 5;
-   let 
-}
-```
-
----
-
-## Idea 1: Case 3
-
-Idea 1: If `x = &y`, then the lifetime of `y` must contain the lifetime of `x`.
-
-```rust
-fn main() {           // Scope 'a
-   let r: &i32;
-   {                  // Scope 'b
-      let n = 5;
-      let rtmp = &n;
-      r = rtmp;
-   }
-}
-```
-
-What are the lifetimes of `r`, `rtmp`, and `n`?
-
---
-
-`r` has lifetime `'a`, but `n` and `rtmp` have lifetime `'b`. The reference-creating statement `rtmp = &n` imposes that `rtmp`'s lifetime `'b` must contain `n`'s lifetime `b`, which is true.
-
---
-
-However, this code is problematic, and the compiler rejects it. Our first take
-on the outlives relation fails because we fail to handle copied references (or
-re-borrowing).
-
----
-
-## The Outlives Relation (Take 2)
-
+Can we express this using lifetimes? Indeed!
 To improve our idea of the outlives relation we'll extend the `&T` type.
 
 Specifically, we'll add more information to the type. We'll extend the type `&T`
@@ -400,14 +298,12 @@ _NOT REAL SYNTAX: **`'b : { .. }` is NOT RUST SYNTAX**_
 ```
 
 Could we say that `r: &'b i32`?
-
 --
-
 No!
 
 ---
 
-## The Outlives Relation (Take 2)
+## The Outlives Relation
 
 We'll use these extended reference types to take another crack at the outlives
 relation, by imposing _three_ rules.
@@ -419,7 +315,7 @@ relation, by imposing _three_ rules.
 
 ---
 
-## Idea 2: Case 1
+## Example 1
 
    1. If `x` has type `T` and lifetime (scope) `'a`, then `&x` has type `&'a T`.
    2. If `x: &'a T = y` and `y: &'b T`, then `'b` must contain `'a`.
@@ -443,7 +339,7 @@ Both `&x` and `rx` have type `&'a i32`. `rx` has lifetime `'a`.
 
 ---
 
-## Idea 1: Case 3
+## Example 2
 
    1. If `x` has type `T` and lifetime (scope) `'a`, then `&x` has type `&'a T`.
    2. If `x: &'a T = y` and `y: &'b T`, then `'b` must contain `'a`.
@@ -593,6 +489,30 @@ fn split(p: &(i32, i32)) -> (&i32, &i32) {
 
 ---
 
+## Lifetime puzzles:
+
+With explicit lifetime parameters.
+
+```rust
+fn max<'a>(x: &'a i32, y: &'a i32) -> &'a i32 {
+   if x > y { x } else { y }
+}
+```
+
+```rust
+fn idx<'a, 'b, T>(array: &'a [T], i: &'b usize) -> &'a T {
+   &array[*i]
+}
+```
+
+```rust
+fn split<'a>(p: &'a (i32, i32)) -> (&'a i32, &'a i32) {
+   (&p.0, &p.1)
+}
+```
+
+---
+
 ## Lifetime Elision Rules
 
 While Rust will not infer lifetimes at function boundaries, it does use
@@ -688,3 +608,13 @@ impl<'a, T> IntoIterator for &'a Vec<T> {
     }
 }
 ```
+
+---
+
+class: middle center
+
+## That's all!
+
+This week you'll be writing a small set of datastructure which involve various
+lifetime relationships.
+
