@@ -89,8 +89,8 @@ All these depths should be space separated.
 
 ## Bonus B: Whitespace Insensitivity.
 
-Change your parser so that it is no longer whitespace sensitive! There are a
-few ways to go about this, so I'll leave it up to you, just include a
+Change your parser so that it is no longer whitespace sensitive! There are a few
+ways to go about this, so I'll leave it up to you as along as you include a
 discussion of the methods you considered and their properties.
 
 ## Bonus C: Lifetime Preview.
