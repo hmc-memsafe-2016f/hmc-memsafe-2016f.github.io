@@ -47,7 +47,8 @@ It can be found [here][prez]
    4. What exactly are `Fn`, `FnOnce`, `FnMut`? Function types in Rust.
    5. Macros --Eric
    6. Anonymous lifetimes in Rust: Elision versus anonymity.
-   7. Writing (and explaining) a safe Rust program which leaks memory
+   7. Writing (and explaining) a safe Rust program which leaks memory --Max and
+      Daniel
    8. Type System Abuse: Compile Time Arithmetic in Rust
    9. `Sized`: Sized and unsized types in Rust. (Also super cool)
    10. Dereference coercions & partial moves

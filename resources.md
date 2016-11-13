@@ -23,6 +23,9 @@ Sometimes 'Resource' pages are well-organized.
    * [llogiq](https://llogiq.github.io/)
    * [Nick Cameron](http://featherweightmusings.blogspot.fr/)
    * [Manish Goregaokar](https://manishearth.github.io/)
+   * [Alexis Beingessner](http://cglab.ca/~abeinges/blah/)
+      * [Too Many Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)
+      * [Rustonomicon](https://doc.rust-lang.org/nomicon/)
 
 # Various Posts
    * [Error Handling](http://blog.burntsushi.net/rust-error-handling/), by
