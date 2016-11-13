@@ -5,7 +5,8 @@ title: "Week 3: Lifetimes"
 
 ---
 
-This week is when the baby gloves come off - you'll be dealing directly with
+This week is when we will deal deeply with some intense areas of Rust's memory
+model - you'll be dealing directly with
 the idea of a _lifetime_, the concept which underlies Rust's borrow system. In
 fact, you've actually been dealing with lifetimes all along but you've been
 using them in situations which were simple enough that you were able to _elide_
@@ -31,7 +32,7 @@ In particular, our design uses the following types:
 
 (This is similar to `std::vec::Vec`, `std::vec::Iter`, and `std::vec::IterMut`.)
 
-You'll
+You will be completing the following tasks:
 
    1. complete the definitions of the above types (by adding the necessary
       lifetime parameters)
