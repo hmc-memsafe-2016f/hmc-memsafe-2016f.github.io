@@ -28,8 +28,8 @@ Week |  Date  | Topic                          | Slides       | Assignment      
 1    | 10/25  | The Ownership System           | [slides][s1] | [A Linked List][hw1]   | 11/1     |
 2    | 11/1   | Ownership: Ramifications       | [slides][s2] | [Expressions][hw2]     | 11/8     |
 3    | 11/8   | Lifetimes: Disambiguated       | [slides][s3] | [A Baby Database][hw3] | 11/15    |
-4    | 11/15  | Rc/Cell: Beyond Lifetimes      | ??           | [Git-rs][hw4]          | 11/22    |
-5    | 11/22  | Unsafe:                        | ??           | [Something Small][hw5] | ??       |
+4    | 11/15  | Unsafe:                        | [slides][s4] | [The Wild West][hw4]   | 11/22    |
+5    | 11/22  | Interior Mutability & Threads  | ??           | [Git-rs][hw5]          | ??       |
 6    | 11/29  | Project Kickoff / NLL          | ??           | Graphs!                | ??       |
 7    | 12/6   |                                | ??           | Graphs!                | ??       |
 
@@ -88,6 +88,7 @@ It can be found [here][prez]
 [s1]: /slides/01/
 [s2]: /slides/02/
 [s3]: /slides/03/
+[s4]: /slides/04/
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
 [hw2]: /assignments/wk2/
