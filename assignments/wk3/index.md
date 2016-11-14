@@ -47,7 +47,12 @@ always provide the best error messages if you mess up your lifetime parameters.
 
 The nature of this assignment means that most of your time will be spent just
 getting the tests to compile, because they won't compile until the lifetime
-parameters you're using have the correct semantics.
+parameters you're using have the correct semantics. To compile and run the
+required tests, do
+
+```
+cargo test --test required
+```
 
 This week -- like the linked list week -- does not involve writing much code,
 but does involve thinking carefully about some fairly tricky concepts
@@ -82,6 +87,12 @@ implementation which allows `Vec<T>` to produce an iterator over `&T` shares an
 iterator with the implementation which allows `[T]` to produce an iterator over
 `&T` (see the `IntoIterator` implementation for `Vec<T>` [here][vec-iter] and
 that its `IntoIter` associated type is `slice::Iter`).
+
+To run the tests for this bonus, do:
+
+```
+cargo test --test bonus_iterator
+```
 
 ## Bonus B: Explaining Lifetimes
 
