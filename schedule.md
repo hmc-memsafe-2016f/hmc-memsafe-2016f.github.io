@@ -40,9 +40,7 @@ It can be found [here][prez]
 # Potential Presentation Topics
 
    1. Debugging Memory Errors in Rust (Assignment 1, Bonus C). --Adam
-   2. `replace_with` (Super cool -- see the motivation below)
-      * Either in the same presentation, or a separate one: Why `replace_with`
-        doesn't quite work.
+   2. `replace_with` -- this turned into part of the "unsafe" assignmnent.
    3. Doubly-linked lists and the Rust ownership model.
    4. What exactly are `Fn`, `FnOnce`, `FnMut`? Function types in Rust.
    5. Macros --Eric
@@ -54,34 +52,7 @@ It can be found [here][prez]
    10. Dereference coercions & partial moves
       * Why sometimes `p.x` and `p.y` can be independently moved and other times
         they can't. --Ross and Luis
-
-#### Replace With
-
-> Often times when writing code in the functional style we find ourself wanting
-> to write 
->
-> ```rust
-> self: &mut T
-> *self = expression!(*self)
-> ```
->
-> But we can't, because we can't move a borrowed value, even temporarily. So we
-> end up writing:
->
-> ```rust
-> self: &mut T
-> tmp_self = mem::replace(self, TMP)
-> *self = expression!(tmp_self)
-> ```
->
-> But this may be less efficient (or require LLVM to do more work), isn't
-> expressing our intention clearly, and may be impossible when there is no
-> convenient TMP.
->
-> How would you address this use case more clearly. What advantages and
-> drawbacks does your solution have? When you think you have firm answers to
-> the above, check out [this](https://crates.io/crates/replace-map).
-
+   11. Allocators. How can one go about allocating memory in (unsafe) Rust?
 
 [sz]: http://slides.com/alexozdemir/memory-safety-and-rust
 [s0]: /slides/00/
@@ -89,12 +60,15 @@ It can be found [here][prez]
 [s2]: /slides/02/
 [s3]: /slides/03/
 [s4]: /slides/04/
+
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
 [hw2]: /assignments/wk2/
 [hw3]: /assignments/wk3/
 [hw4]: /assignments/wk4/
-[hw5]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[hw5]: /assignments/wk5/
+[hw6]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
 [prez]: https://docs.google.com/spreadsheets/d/1EM6xf0YVGYcrNmU5CVSD_X-I0qlYnCBHO93KauNY_kI/edit?usp=sharing
 
 [troll]: https://www.youtube.com/watch?v=dQw4w9WgXcQ

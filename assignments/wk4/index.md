@@ -89,6 +89,11 @@ You can test your implementation using
 cargo test --test required
 ```
 
+For this assignment I ask that you do not look at the standard library's
+implementation of `Rc`. You may however, look at the API for `Rc`, as well as
+any code that uses it, in order to better understand the API. Note that we're
+implementing a subset of its functionality.
+
 ## Part C: Breaking Rc
 
 For the final part of the assignment, you must do two things:
