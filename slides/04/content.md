@@ -454,35 +454,53 @@ class: center middle
 
 ---
 
+class: center middle
+layout: true
+
+---
+
 ## Why Use Unsafe Rust?
 
+.img-large[
 ![Space of Programs][pgm-space]
+]
 
 ---
 
 ## Why Use Unsafe Rust?
 
+.img-large[
 ![Space of Programs & Examples][pgm-space-ex]
+]
 
 ---
 
 ## Why Use Unsafe Rust?
 
+.img-large[
 ![Safe Rust][safe]
+]
 
 ---
 
 ## Why Use Unsafe Rust?
 
+.img-large[
 ![Unsafe Full][unsafe-bad]
+]
 
 ---
 
 ## Why Use Unsafe Rust?
 
+.img-large[
 ![Unsafe Well USed][unsafe-good]
+]
 
 ---
+
+layout: false
+class: left
 
 ## The Abstraction Safety Contract
 
@@ -582,6 +600,12 @@ For this assignment I ask you not too look at how `std::rc::Rc` is implemented.
 You may however, look at it's reference documentation and example code to
 understand how reference counting works. Note: we're implementing a subset of
 its functionality.
+
+---
+
+Reminder: Submit your post-assignment questionnaire (the link is on the
+assignment page)
+
 
 [double-list]: https://docs.google.com/drawings/d/1Ff_SUC1zhjpqf6dZrmm2unoIIQd8BXOGXe3FADH_OQM/pub?w=972&h=402
 [vector]: https://docs.google.com/drawings/d/160gZqBeYDf1JO6Iorb7QaGZMSz9RzdkBRjAPni6LAWU/pub?w=924&h=321
