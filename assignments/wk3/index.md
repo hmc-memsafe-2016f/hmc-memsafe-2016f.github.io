@@ -133,9 +133,9 @@ include snippets of the code with scopes labelled.
    6. However, if we change our "test" functions (`a_outlives_b` and
       `b_outlives_a`), [it works][bonus-b-c-eq-bad-test]! Explain why this
       happens.
-   7. Finally, we strike upon the correct idea. This code compiles and works
-      just fine. What do you think the `for<'c>` means? Feel free to take a
-      guess or read [this][hrtb] and then answer.
+   7. Finally, we strike upon the [correct idea][bonus-b-done]. This code
+      compiles and works just fine. What do you think the `for<'c>` means? Feel
+      free to take a guess or read [this][hrtb] and then answer.
 
 ## Bonus C: Parsing Round II
 
