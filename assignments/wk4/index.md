@@ -1,106 +1,196 @@
 ---
 
 layout: assignment
-title: "Week 4: Beyond Ownership"
+title: "Week 4: Unsafe"
 
 ---
 
-## The Model
+This week you'll be writing unsafe code for the first time! As you'll no doubt
+find, with great power comes great responsibility. For the first time, the
+compiler will not be able to protect you from many mistakes you'll encounter.
 
-The idea for this week is to go beyond programs and data structures which can
-be expressed using the Rust ownership system. To this end you'll be implementing
-an in-memory revision tracking system, somewhat similar to git. The model is as
-follows:
+You'll find tests (but no starter code) [here][starter]. **After completing the
+assignment, fill out [the exit questionnaire][survey].**
 
-### Commits
+## Part A: Replace With
 
-The system tracks _commits_, where each commit is a single revision. Each commit
-has exactly one parent, but multiple commits may have the same parent. In this
-way, the commits form a tree.
+Often times when writing code in the functional style we find ourself wanting
+to write:
 
-### Branches
-
-Commits can never be named directly, instead all commits are referred to using
-_branches_. A branch is essentially just a label for some commit. When the
-revision tracking is initialized with a first commit, the first branch,
-_master_, is automatically created, and points to that commit.
-
-### Making new branches
-
-Further branches can be created by specifying an existing branch to "copy",
-which will make the new branch point to the same commit as the old one. Branches
-can also be created pointing to an ancestor of an existing commit (e.g. a
-commit's 3rd parent).
-
-In this way, commits which are ancestors of commits pointed to by branches may
-be referenced. We say that any commit which is an ancestor of a commit pointed
-to by a branch is _reachable_.
-
-Branch names will always be alphanumeric strings.
-
-### Making new commits
-
-New commits are created by specifying which branch to commit to. This creates a
-new commit which has that branch's old target as its parent, and updates the
-branch to point to the new commit.
-
-### Deleting branches (and commits)
-
-Branches may also be deleted. When this happens, some commits may become
-unreachable. These commits should be deleted - that is their memory should be
-freed.
-
-### Recap
-
-Consider this image:
-
-![Commits][commits]
-
-   * Branch D could be created by creating a branch to the 2nd parent of C.
-      * It could also be created by making a branch to the 2nd parent of A or B.
-   * If a commit was added to branch B, then branch B would now point to a
-     commit, _7_, whose parent would be _5_.
-   * If branch A were deleted, then commits _3_ and _6_ would also be.
-
-Note, while commits in this image have names (_1_, _2_, ...) for convenience,
-commits in our system are anonymous.
-
-## The Specification
-
-Really, a specification by example. When started, you program should provide
-the user a prompt. When they enter commands it should provide output like below.
-The blank lines are required.
-
-```text
-$ path/to/binary 'Starting Payload'
-master -> 'Starting Payload'
-
-> new branch A master               // master~0 is equivalent
-A -> 'Starting Payload'
-
-> new commit 'Payload 1' A
-A -> 'Payload 1'
-
-> new branch B A~1
-B -> 'Starting Payload'
-
-> new commit 'Payload 2' B
-B -> 'Payload 2'
-
-> new commit 'Payload 3' B
-B -> 'Payload 3'
-
-> delete branch B
-B deleted
-'Payload 3' deleted
-'Payload 2' deleted
+```rust
+self: &mut T
+*self = expression!(*self)
 ```
 
-You may assume that all payloads contain only alphanumeric characters and
-spaces.
+But we can't, because we can't move a borrowed value, even temporarily. So we
+end up writing:
 
-You may assume that all branches are alphanumeric.
+```rust
+self: &mut T
+tmp_self = mem::replace(self, TMP)
+*self = expression!(tmp_self)
+```
 
-When commits must be deleted, the order is up to you.
+But this may be less efficient (or require LLVM to do more work), isn't
+expressing our intention clearly, and may be impossible when there is no
+convenient TMP.
 
-[commits]: https://docs.google.com/drawings/d/1NdZZiarwfJQLxAPDmdggTZf_kKAj5GaUYKm5FOEDJPU/pub?w=556&h=456
+For this part you'll implement:
+
+```rust
+/// Replaces `*t` with `f` applied to the original `*t`,
+pub fn replace_with<T, F: FnOnce(T) -> T>(t: &mut T, f: F);
+```
+
+which allows one to use the above programming pattern without providing a
+temporary values.
+
+Since you're providing a library, you should make sure the library's entry point
+is `src/lib.rs` within the `replace_with` crate. You can test your solution by running
+
+```
+cargo test --test required.rs
+```
+
+## Part B: Rc
+
+For the second part of this assignment you'll implement `MyRc`, a clone of
+`std::rc::Rc`. `MyRc` will allow for multiple "owning" pointers to share the
+same underlying data, such that the underlying data is free'd only when all the
+`Rc`'s go out of scope.
+
+Refer to the class slides for a more complete description of the idea behind
+`Rc`.
+
+Your `MyRc<T>` type must have the following public functions:
+
+   * `fn new(t: T) -> MyRc<T>;` which wraps a T within reference-counted memory.
+   * `fn consume(t: T) -> Result<T,MyRc<T>>;` which turns a `MyRc<T>` back into
+     a `T` if the `MyRc` was the only remaining `MyRc` to the underlying data.
+
+It must also implement the following traits:
+
+```rust
+impl<T> Deref for MyRc<T> { // refer to the underlying data
+   type Target = T;
+   // TODO
+}
+impl<T> Clone for MyRc<T> { // Make a new `MyRc` to the same underlying data
+   // TODO
+}
+```
+
+and for all of this to work you'll need to correctly implement `Drop` for
+`MyRc`, so that the underlying data is freed/not-freed at the correct times.
+
+You can test your implementation using
+
+```
+cargo test --test required
+```
+
+For this assignment I ask that you do not look at the standard library's
+implementation of `Rc`. You may however, look at the API for `Rc`, as well as
+any code that uses it, in order to better understand the API. Note that we're
+implementing a subset of its functionality.
+
+## Part C: Breaking Rc
+
+For the final part of the assignment, you must do two things:
+
+   1. Describe a way to break `MyRc` by changing something inside an `unsafe`
+      block or function.
+   2. Describe a way to break `MyRc` by changing something _outside_ an `unsafe`
+      block of function.
+
+where a change breaks the type if it causes the type to violate the Abstraction
+Safety Contract. As a review, such a violation would allow a user of the type to
+get a memory error without using any unsafe code of their own.
+
+For each breaking change, verify that the change would actually compile, explain
+the issue, and outline a usage pattern (perhaps an example) which would produce
+the memory error. Give these explanations in a markdown file.
+
+## Bonuses
+
+### Replace_With Unsoundness
+
+So it turns out that it is **very hard** (impossible, according to anyone I've
+talked to) to safely implement `replace_with`. Ultimately this is because Rust
+insists that programs must be memory safe even after a panic[^panic].
+
+For 2 bonus points, think of a safe Rust program which uses `replace_with` to
+produce a memory error. Demonstrate that this program does indeed produce an
+error by adding it to the test suite in the form of a functions. The relevant
+test suite is in `src/tests/required.rs` in the `replace_with` crate.
+
+For 1 bonus point, you may do this problem with the help of a hint -- look at an
+example of such a program (located on the `unsound-hint` branch of the starter
+code), and explain _why_ it produces a memory error.
+
+### Weak<T>
+
+One of the big problems with reference counting is that you can get cyclical
+reference patterns which cause all the data involved to be retained until the
+program ends, even if that data is no longer reachable.
+
+This can be mitigated by programming with "weak reference counted pointer",
+pointers which point to the data being reference counted, but which do not
+prevent that data from being freed. Understandably, if weak pointers do not
+cause the data to be retained, they can not guarantee access to it either.
+
+They can be created by:
+
+```rust
+MyRc<T>::downgrade(&self) -> MyWeak<T>;
+```
+
+They can be used to produce a `MyRc` on demand (which can then be used to access
+the data) using:
+
+```rust
+MyWeak<T>::upgrade(&self) -> Option<MyRc<T>>;
+```
+
+Modify your reference counting system so that it incorporates a weak pointer
+named `MyWeak<T>` and includes the above functions.
+
+A note: planning the system before implementing it is _very_ important. Explore
+edge cases during the planning phase, to make sure your system works. I cannot
+emphasize this advice enough: the step from `Box` to `Rc` is smaller than the
+step from `Rc` to `Weak`.
+
+You can test your implementation using
+
+```
+cargo test --test weak
+```
+
+### Reference Count Overflow
+
+Most reference counters use keep their counts in `usize`.
+
+The memory safety of reference counted containers depends very critically on the
+reference counts they store. Any time safety depends on integer values, one
+should consider the possibility and impact of overflow. Most reference counters
+(including the standard library) keep their counts in a `usize`; since `usize`s
+can store the size of the address space it seems like there is no potential for
+the reference count to overflow.
+
+In a markdown file explain
+
+   1. Why overflow would be problematic and outline how it could lead to a
+      memory error.
+   2. Why even keeping reference counts in a `usize` doesn't _entirely_
+      eliminate the possibility of overflow, and what conditions/actions would
+      have to exist/happen to lead to the overflow in a program that uses only
+      safe Rust.
+
+As a hint: the problematic behavior is tied to the size of the address space. I
+probably couldn't produce this bug on my machine (64 bit), but it probably
+wouldn't be too hard on a 16 bit machine.
+
+Another hint: Rust doesn't promise to run destructors.
+
+[starter]: https://github.com/hmc-memsafe-2016f/wk4-starter.git
+[survey]: https://docs.google.com/forms/d/e/1FAIpQLScuTNb3CK1gUH4ejN6bTadDm5XVqOVbHyrL19Cl1y1-kwiK1g/viewform

@@ -46,6 +46,10 @@ diff <(cargo run --bin repl < examples/test.in) examples/test.repl.out
 diff <(cargo run --bin stat < examples/test.in) examples/test.stat.out
 ```
 
+# Bonuses
+
+They're not necessarily in order of increasing difficulty
+
 ## Bonus A: Optimizing Arithmetic Expressions.
 
 This bonus has a few memory issues upfront, plus an open-ended optimization
@@ -85,8 +89,8 @@ All these depths should be space separated.
 
 ## Bonus B: Whitespace Insensitivity.
 
-Change your parser so that it is no longer whitespace sensitive! There are a
-few ways to go about this, so I'll leave it up to you, just include a
+Change your parser so that it is no longer whitespace sensitive! There are a few
+ways to go about this, so I'll leave it up to you as along as you include a
 discussion of the methods you considered and their properties.
 
 ## Bonus C: Lifetime Preview.
@@ -103,6 +107,35 @@ structure as well.
 While this approach is useful in some cases (`nom` uses techniques like this
 under the hood), it's pretty silly here because integer literals are actually
 smaller than slices :laughing:.
+
+This bonus uses things we haven't discussed yet, so I don't really recommend it.
+
+## Bonus D: Blast From the Past
+
+Last week a handfull of people implemented `remove_first` using `pop` to expose
+the item to remove, and then `push` to put everything else back.
+
+The sample solution I wrote does a traversal and reassembly of sorts, but is
+recursive, which raises concerns about overflowing the stack (recall Bonus C and
+Adam's presentation).
+
+It is also possible to write a non-recursive traversal and re-assembly. Since no
+one got this working last week and the sample solution doesn't do it either, you
+can take another crack at it this week!
+
+You many find this comment helpful if you choose to do so:
+
+> I believe that you can make this "traversal style" work, but you have to be
+> very careful about who owns which node when (what the data structure and stack
+> variables own during each step). Pictures are helpful for this.
+>
+> Essentially you want to take ownership of rest of the list at the beginning and
+> walk through it, adding one node at a time to the back of the list. Likely the
+> only &mut you should maintain is to the back of the list being reassembled.
+
+As is often the case, the solution is elegant and easy to write if you're
+thinking about it clearly. If you do this bonus, submit a PR against
+`wk1-starter`, and tell me you did so in your PR against `wk2-starter`.
 
 [qq]: https://docs.google.com/forms/d/e/1FAIpQLScCi0u3luk45jpzwIi5aMOM750SJ7u5LOkt02-09Ol95tb5rQ/viewform
 [wk2-github]: https://github.com/hmc-memsafe-2016f/wk2-starter
