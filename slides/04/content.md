@@ -157,7 +157,7 @@ fn main() {
     }
 
     let p2 = 0 as *mut _;
-    println!("{}", unsafe { *p });
+    println!("{}", unsafe { *p2 });
 }
 ```
 
