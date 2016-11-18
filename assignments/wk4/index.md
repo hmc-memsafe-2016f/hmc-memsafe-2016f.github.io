@@ -49,7 +49,7 @@ Since you're providing a library, you should make sure the library's entry point
 is `src/lib.rs` within the `replace_with` crate. You can test your solution by running
 
 ```
-cargo test --test required.rs
+cargo test --test required
 ```
 
 ## Part B: Rc
