@@ -69,28 +69,31 @@ commits in our system are anonymous.
 
 Really, a specification by example. When started, you program should provide
 the user a prompt. When they enter commands it should provide output like below.
-The blank lines are required.
 
+The command
 ```text
-$ path/to/binary 'Starting Payload'
+$ path/to/binary < input-file.txt
+```
+
+The input
+```text
+start 'Starting Payload'
+new branch A master               // master~0 is equivalent
+new commit 'Payload 1' A
+new branch B A~1
+new commit 'Payload 2' B
+new commit 'Payload 3' B
+delete branch B
+```
+
+The output
+```text
 master -> 'Starting Payload'
-
-> new branch A master               // master~0 is equivalent
 A -> 'Starting Payload'
-
-> new commit 'Payload 1' A
 A -> 'Payload 1'
-
-> new branch B A~1
 B -> 'Starting Payload'
-
-> new commit 'Payload 2' B
 B -> 'Payload 2'
-
-> new commit 'Payload 3' B
 B -> 'Payload 3'
-
-> delete branch B
 B deleted
 'Payload 3' deleted
 'Payload 2' deleted
@@ -101,6 +104,7 @@ spaces.
 
 You may assume that all branches are alphanumeric.
 
-When commits must be deleted, the order is up to you.
+When commits must be deleted, they should be deleted starting with the commits
+closest to the deleted branch.
 
 [commits]: https://docs.google.com/drawings/d/1NdZZiarwfJQLxAPDmdggTZf_kKAj5GaUYKm5FOEDJPU/pub?w=556&h=456
