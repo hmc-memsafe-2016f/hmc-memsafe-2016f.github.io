@@ -67,36 +67,42 @@ commits in our system are anonymous.
 
 ## The Specification
 
-Really, a specification by example. When started, you program should provide
-the user a prompt. When they enter commands it should provide output like below.
+Really, a specification by example. During its run, your program should provide
+the user a prompt (`> `). When they enter commands it should provide output like
+below.  The blank lines are required.
 
-The command
-```text
-$ path/to/binary < input-file.txt
-```
+After every command the program should output some information about what
+happened, as done in the example below.
 
-The input
 ```text
-start 'Starting Payload'
-new branch A master               // master~0 is equivalent
-new commit 'Payload 1' A
-new branch B A~1
-new commit 'Payload 2' B
-new commit 'Payload 3' B
-delete branch B
-```
-
-The output
-```text
+$ path/to/binary 'Starting Payload'
 master -> 'Starting Payload'
+
+> new branch A master               // master~0 is equivalent
 A -> 'Starting Payload'
+
+> new commit 'Payload 1' A
 A -> 'Payload 1'
+
+> new branch B A~1
 B -> 'Starting Payload'
+
+> new commit 'Payload 2' B
 B -> 'Payload 2'
+
+> new commit 'Payload 3' B
 B -> 'Payload 3'
+
+> delete branch B
 B deleted
 'Payload 3' deleted
 'Payload 2' deleted
+
+> delet branch B
+Error
+
+> delete branch B
+Error
 ```
 
 You may assume that all payloads contain only alphanumeric characters and
@@ -106,5 +112,16 @@ You may assume that all branches are alphanumeric.
 
 When commits must be deleted, they should be deleted starting with the commits
 closest to the deleted branch.
+
+If the user provides _any_ instructions that don't make sense, print Error.
+
+After the user enters ctrl-D or ctrl-C, your program can do whatever it wants.
+
+
+## Grading
+
+This assignment won't be auto-graded, is optional, and is worth 2 bonus points.
+If you do it, fill out
+[this](https://docs.google.com/forms/d/e/1FAIpQLSegU6Zb4mNUSpbhRE7fiFMojluoN9etYIZQrEgqi_WXv-1wrA/viewform) form.
 
 [commits]: https://docs.google.com/drawings/d/1NdZZiarwfJQLxAPDmdggTZf_kKAj5GaUYKm5FOEDJPU/pub?w=556&h=456
