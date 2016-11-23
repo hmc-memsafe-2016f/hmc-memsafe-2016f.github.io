@@ -29,8 +29,8 @@ Week |  Date  | Topic                          | Slides       | Assignment      
 2    | 11/1   | Ownership: Ramifications       | [slides][s2] | [Expressions][hw2]     | 11/8     |
 3    | 11/8   | Lifetimes: Disambiguated       | [slides][s3] | [A Baby Database][hw3] | 11/15    |
 4    | 11/15  | Unsafe:                        | [slides][s4] | [The Wild West][hw4]   | 11/22    |
-5    | 11/22  | Interior Mutability & Threads  | ??           | [Git-rs][hw5]          | ??       |
-6    | 11/29  | Project Kickoff / NLL          | ??           | Graphs!                | ??       |
+5    | 11/22  | Send, Sync, Threads, & NLL     | [slides][s5] | [Git-rs][hw5](Optional)| 11/29    |
+6    | 11/29  | Project Kickoff                | ??           | Graphs!                | ??       |
 7    | 12/6   |                                | ??           | Graphs!                | ??       |
 
 # Presentation Schedule
@@ -53,6 +53,11 @@ It can be found [here][prez]
       * Why sometimes `p.x` and `p.y` can be independently moved and other times
         they can't. --Ross and Luis
    11. Allocators. How can one go about allocating memory in (unsafe) Rust?
+   12. [`crossbeam`][crossbeam]: aturon's scoped thread library.
+      * You know how threads require `'static` inputs? What if they didn't?
+   13. Single Entry Multiple Exit/Static Single Assignment/Dominators take on Non-Lexical Lifetimes.
+   14. Associated Type Constructors.
+   15. Garbage collection traits.
 
 [sz]: http://slides.com/alexozdemir/memory-safety-and-rust
 [s0]: /slides/00/
@@ -60,6 +65,7 @@ It can be found [here][prez]
 [s2]: /slides/02/
 [s3]: /slides/03/
 [s4]: /slides/04/
+[s5]: /slides/05/
 
 [hw0]: /assignments/wk0/
 [hw1]: /assignments/wk1/
@@ -68,6 +74,8 @@ It can be found [here][prez]
 [hw4]: /assignments/wk4/
 [hw5]: /assignments/wk5/
 [hw6]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+[crossbeam]: http://aturon.github.io/crossbeam-doc/crossbeam/
 
 [prez]: https://docs.google.com/spreadsheets/d/1EM6xf0YVGYcrNmU5CVSD_X-I0qlYnCBHO93KauNY_kI/edit?usp=sharing
 

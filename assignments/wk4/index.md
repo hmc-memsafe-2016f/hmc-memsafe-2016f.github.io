@@ -49,7 +49,7 @@ Since you're providing a library, you should make sure the library's entry point
 is `src/lib.rs` within the `replace_with` crate. You can test your solution by running
 
 ```
-cargo test --test required.rs
+cargo test --test required
 ```
 
 ## Part B: Rc
@@ -65,7 +65,7 @@ Refer to the class slides for a more complete description of the idea behind
 Your `MyRc<T>` type must have the following public functions:
 
    * `fn new(t: T) -> MyRc<T>;` which wraps a T within reference-counted memory.
-   * `fn consume(t: T) -> Result<T,MyRc<T>>;` which turns a `MyRc<T>` back into
+   * `fn consume(self) -> Result<T,MyRc<T>>;` which turns a `MyRc<T>` back into
      a `T` if the `MyRc` was the only remaining `MyRc` to the underlying data.
 
 It must also implement the following traits:

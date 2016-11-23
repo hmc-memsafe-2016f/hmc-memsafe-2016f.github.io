@@ -67,9 +67,12 @@ commits in our system are anonymous.
 
 ## The Specification
 
-Really, a specification by example. When started, you program should provide
-the user a prompt. When they enter commands it should provide output like below.
-The blank lines are required.
+Really, a specification by example. During its run, your program should provide
+the user a prompt (`> `). When they enter commands it should provide output like
+below.  The blank lines are required.
+
+After every command the program should output some information about what
+happened, as done in the example below.
 
 ```text
 $ path/to/binary 'Starting Payload'
@@ -94,6 +97,12 @@ B -> 'Payload 3'
 B deleted
 'Payload 3' deleted
 'Payload 2' deleted
+
+> delet branch B
+Error
+
+> delete branch B
+Error
 ```
 
 You may assume that all payloads contain only alphanumeric characters and
@@ -101,6 +110,18 @@ spaces.
 
 You may assume that all branches are alphanumeric.
 
-When commits must be deleted, the order is up to you.
+When commits must be deleted, they should be deleted starting with the commits
+closest to the deleted branch.
+
+If the user provides _any_ instructions that don't make sense, print Error.
+
+After the user enters ctrl-D or ctrl-C, your program can do whatever it wants.
+
+
+## Grading
+
+This assignment won't be auto-graded, is optional, and is worth 2 bonus points.
+If you do it, fill out
+[this](https://docs.google.com/forms/d/e/1FAIpQLSegU6Zb4mNUSpbhRE7fiFMojluoN9etYIZQrEgqi_WXv-1wrA/viewform) form.
 
 [commits]: https://docs.google.com/drawings/d/1NdZZiarwfJQLxAPDmdggTZf_kKAj5GaUYKm5FOEDJPU/pub?w=556&h=456
