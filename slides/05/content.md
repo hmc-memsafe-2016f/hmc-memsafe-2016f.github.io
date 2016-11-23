@@ -70,6 +70,43 @@ fn get_default<'m,K,V>(map: &'m mut HashMap<K,V>, key: K)
 
 ---
 
+## The Current Lifetime Rules
+
+   1. If `x` has type `T` and lifetime (scope) `'a`, then `&x` has type `&'a T`.
+   2. If `x: &'a T = y` and `y: &'b T`, then `'b` must contain `'a`.
+   3. If `x` has type `&'b T`, then `'b` must contain the lifetime (scope) of
+      `x`.
+
+---
+
+## Proposed Lifetime Rules I
+
+   1. If `x` has type `T` and **live-range** `'a`, then `&x` has type `&'a T`.
+   2. If `x: &'a T = y` and `y: &'b T`, then `'b` must outlive `'a`, where "outlive" means, "be a superset of".
+   3. If `x` has type `&'b T`, then `'b` must contain the **live-range** of `x`.
+
+---
+
+## Proposed Lifetime Rules II
+
+   1. If `x` has type `T` and **live-range** `'a`, then `&x` has type `&'a T`.
+   2. If `x: &'a T = y` and `y: &'b T`, then `'b` must outlive `'a`, where "outlive" means, "be a superset of".
+   3. If `x` has type `&'b T`, then `'b` must contain the **live-range** of `x`.
+
+--
+
+For comparison
+
+## The Original Rules
+
+   1. If `x` has type `T` and lifetime (scope) `'a`, then `&x` has type `&'a T`.
+   2. If `x: &'a T = y` and `y: &'b T`, then `'b` must contain `'a`.
+   3. If `x` has type `&'b T`, then `'b` must contain the lifetime (scope) of
+      `x`.
+
+---
+
+
 class: center middle
 
 ## Memory Safety
@@ -120,7 +157,7 @@ fn main() {
     let r = unsafe {
         &*p
         //&std::ptr::read(p)
-    }
+    };
 }
 ```
 
@@ -419,6 +456,9 @@ The assignment this week is strictly optional (worth 2 bonus points).
 
 It is a simplified version of git, which is easiest to implement using types
 from `std`.
+
+The bonuses from this week will also stay open (so long as you don't look at the
+sample solution or other people's submissions).
 
 ### After Thanksgiving
 
