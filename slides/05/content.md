@@ -19,7 +19,7 @@ class: left
 ```rust
 fn foo() {
     let mut data = vec!['a', 'b', 'c'];
-    let r = &mut data[..];
+    let r = &mut data;
     r.push('d');
     data.push('e');
     data.push('f');
@@ -53,6 +53,7 @@ fn process<T>(t: T) { }
 ## Program 3
 
 ```rust
+use std::collections::HashMap;
 fn get_default<'m,K,V>(map: &'m mut HashMap<K,V>, key: K)
                       -> &'m mut V
       where K: std::cmp::Eq + std::hash::Hash,
