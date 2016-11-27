@@ -30,8 +30,8 @@ Week |  Date  | Topic                          | Slides       | Assignment      
 3    | 11/8   | Lifetimes: Disambiguated       | [slides][s3] | [A Baby Database][hw3] | 11/15    |
 4    | 11/15  | Unsafe:                        | [slides][s4] | [The Wild West][hw4]   | 11/22    |
 5    | 11/22  | Send, Sync, Threads, & NLL     | [slides][s5] | [Git-rs][hw5](Optional)| 11/29    |
-6    | 11/29  | Project Kickoff                | ??           | Graphs!                | ??       |
-7    | 12/6   |                                | ??           | Graphs!                | ??       |
+6    | 11/29  | Project Kickoff                | ??           | [Graphs!][proj]        |[??][proj]|
+7    | 12/6   |                                | ??           | Continue Graphs!       |          |
 
 # Presentation Schedule
 
@@ -73,6 +73,7 @@ It can be found [here][prez]
 [hw3]: /assignments/wk3/
 [hw4]: /assignments/wk4/
 [hw5]: /assignments/wk5/
+[proj]: /assignments/project/
 [hw6]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 [crossbeam]: http://aturon.github.io/crossbeam-doc/crossbeam/

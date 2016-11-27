@@ -1,7 +1,7 @@
 ---
 
 layout: assignment
-title: "Week 4: Beyond Ownership"
+title: "Week 5: Beyond Ownership"
 
 ---
 
@@ -121,6 +121,9 @@ After the user enters ctrl-D or ctrl-C, your program can do whatever it wants.
 ## Grading
 
 This assignment won't be auto-graded, is optional, and is worth 2 bonus points.
+
+You'll need to create your own cargo project, from scratch!
+
 If you do it, fill out
 [this](https://docs.google.com/forms/d/e/1FAIpQLSegU6Zb4mNUSpbhRE7fiFMojluoN9etYIZQrEgqi_WXv-1wrA/viewform) form.
 
