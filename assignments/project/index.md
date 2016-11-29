@@ -19,7 +19,8 @@ To complete your project you must complete the following:
 
    1. A review of the API of `petgraph`.
    1. A specification of your own API
-   1. A description of the algorithms you will implement, with pseudocode
+   1. A description of the algorithms you will implement, including how they
+      work
    1. An implementation of your data structure
    1. An implementation of the algorithms
    1. A demonstration that the algorithms work (tests cases and/or a GUI)
@@ -41,6 +42,9 @@ definitely be bonuses:
    * Allow the user to store generic (type-safe) data at nodes and edges. That
      is, make your graph generic over the type attached to nodes and edges. The
      allows you to express generalized weights at nodes and edges.
+   * Implementing an API that does a particularly good job of catching errors at
+     compile-time. A good example of this would being able to implement a graph
+     search without any `unwrap`s.
    * Implement a GUI for one or both of your graph algorithms
    * Implement a parallel graph algorithm. You need not achieve any particular
      speedup.
@@ -119,15 +123,15 @@ impl MyBox {
 }
 ```
 
-Running `cargo doc` generates the following documenation in `target/doc`:
+Running `cargo doc` generates the following documentation in `target/doc`:
 
 ![Rustdoc Output][doc]
 
 ### Algorithm Description
 
 You should describe the two algorithms you will implement. Explain their inputs,
-outputs, and what they compute. Include pseudocode to explain _how_ they compute
-it.
+outputs, and what they compute. Explain _how_ they compute this. You may choose
+to use pseudocode to do this, but you do not need to.
 
 One of these algorithms should be chose from Djikstra's, Ford-Fulkerson, Floyd
 Warshall, Prim's, or Kruskal's. The other can be whatever you want (it could be
