@@ -28,6 +28,9 @@ To complete your project you must complete the following:
 Items 1 through 3 are due Tuesday, 6 December 2016 at 4:15 pm. Items 4 through 6 are due
 Thursday, 15 December 2016 at 10:00 pm.
 
+Submissions should be made by submitting a pull-requests against
+[this](https://github.com/hmc-memsafe-2016f/final-project) (empty) repository.
+
 ## Groups & Grading
 
 You may do this project with someone else. The advantage of doing so is that two
