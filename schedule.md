@@ -49,10 +49,9 @@ It can be found [here][prez]
    7. Writing (and explaining) a safe Rust program which leaks memory --Max and
       Daniel
    8. Type System Abuse: Compile Time Arithmetic in Rust
-   9. `Sized`: Sized and unsized types in Rust. (Also super cool)
-   10. Dereference coercions & partial moves
-      * Why sometimes `p.x` and `p.y` can be independently moved and other times
-        they can't. --Ross and Luis
+   9. `Sized`: Sized and unsized types in Rust. (Also super cool) --Michael and
+      Jackson
+   10. Dereference coercions & partial moves --Ross and Luis
    11. Allocators. How can one go about allocating memory in (unsafe) Rust?
    12. [`crossbeam`][crossbeam]: aturon's scoped thread library.
       * You know how threads require `'static` inputs? What if they didn't?
