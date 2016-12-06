@@ -58,7 +58,7 @@ definitely be bonuses:
 
 ### API Review
 
-You should review the API for [petgraph][petgraph] write an analysis of this.
+You should review the API for [petgraph][petgraph] and write an analysis of it.
 This should include
 
    * a description of the high-level features the API provides
