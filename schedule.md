@@ -52,8 +52,7 @@ It can be found [here][prez]
    9. `Sized`: Sized and unsized types in Rust. (Also super cool) --Michael and
       Jackson
    10. Dereference coercions & partial moves --Ross and Luis
-   11. Allocators. How can one go about allocating memory in (unsafe) Rust?
-       --Julien and Dan
+   11. Allocators. How can one go about allocating memory in (unsafe) Rust?  --Julien and Dan
    12. [`crossbeam`][crossbeam]: aturon's scoped thread library.
       * You know how threads require `'static` inputs? What if they didn't?
    13. Single Entry Multiple Exit/Static Single Assignment/Dominators take on Non-Lexical Lifetimes.

@@ -32,7 +32,7 @@ Submissions should be made by submitting a pull-requests against
 [this](https://github.com/hmc-memsafe-2016f/final-project) (empty) repository.
 
 After submitting the project, fill out [this][form1] exit questionnaire and fill
-out the course evaluation [here][form2].
+out the course evaluation [here][eval].
 
 ## Groups & Grading
 
