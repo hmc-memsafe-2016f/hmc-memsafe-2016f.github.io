@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Resources
+menu: true
 permalink: /resources/
 ---
 

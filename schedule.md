@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Schedule, Slides, & Assignments
+menu: true
 permalink: /schedule/
 ---
 
