@@ -31,6 +31,9 @@ Thursday, 15 December 2016 at 10:00 pm.
 Submissions should be made by submitting a pull-requests against
 [this](https://github.com/hmc-memsafe-2016f/final-project) (empty) repository.
 
+After submitting the project, fill out [this][form1] exit questionnaire and fill
+out the course evaluation [here][form2].
+
 ## Groups & Grading
 
 You may do this project with someone else. The advantage of doing so is that two
@@ -157,3 +160,5 @@ correct. You may also implement a GUI for you algorithms for bonus points.
 [graph]: https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)
 [petgraph]: https://docs.rs/petgraph/0.4.1/petgraph/
 [doc]: /images/2016-11-26-rustdoc.png
+[form1]: https://docs.google.com/forms/d/e/1FAIpQLScYc_7BXX47I8abE3grn9ih-idYH1QUhK9IKC3pWlhY17O0lw/viewform
+[eval]: https://docs.google.com/a/g.hmc.edu/forms/d/e/1FAIpQLSf0hfnPDe_5uDpIMO6VT5P5en_iRZrvCs1X-l6RE-0_evsIlg/viewform
